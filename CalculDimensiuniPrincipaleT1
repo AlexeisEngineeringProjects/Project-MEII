@@ -71,10 +71,10 @@ kD = 1.97;  % Coeficientul kD
 De = kD * D; % Diametrul exterior al statorului [cm]
 
 % Lungimea geometrică a mașinii
-tau = pi * D / (2 * p); % Lungimea geometrică a mașinii [cm]
+tau = pi * D / (2 * p); % Lungimea pasului polar [cm]
 A = 420; % Densitatea de curent [A/cm]
 Bdelta = 0.55; % Inducția magnetică la intrefier [T]
-lg = (2 * p * Sin * 1e4) / (1000 * kB * kw * alfai * D^2 * A * Bdelta); % Lungimea intrefierului [cm]
+lg = (2 * p * Sin * 1e4) / (1000 * kB * kw * alfai * D^2 * A * Bdelta); % Lungimea geometrica [cm]
 
 % Lungimea intrefierului
 delta = 0.03 * (4 + 0.7 * sqrt(D * lg)); % Lungimea intrefierului [mm]
