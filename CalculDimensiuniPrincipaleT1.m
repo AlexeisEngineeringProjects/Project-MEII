@@ -1,5 +1,5 @@
 
-run(HeaderScript.m);
+run("HeaderScript.m");
 
 % Date tabelare (Tabelul 2.1)
 % +------------------------------------------------------+
