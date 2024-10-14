@@ -14,7 +14,7 @@ ProtectionGroup = "IP22";
 Serviciul = "S1";
 
 % personalized data:
-P = 132; % [kW]
+Pn = 132; % [kW]
 nN = 2978; % [rotations/min]
 
 % Electrical Machine is working in normal conditions
