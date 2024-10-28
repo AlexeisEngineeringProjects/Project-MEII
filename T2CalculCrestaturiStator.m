@@ -1,7 +1,3 @@
-% Import variables from the respective scripts
-% Assuming f1, Un, n, Pn are defined in Variables.m
-% and Un, n, Pn, p, etaN, cosFiN, U1, Sn, I1n, kE, E1, Sin, kw, ksd, alfai, kB, C, lambda_, D, kD, De, tau, A, Bdelta, lg, delta are defined in T1.m
-
 run("CalculDimensiuniPrincipaleT1.mlx")
 
 % ====================================================
