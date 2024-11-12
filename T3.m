@@ -3,7 +3,7 @@ run("T2_CalcululInfasurarilorCrestaturilorStatorului.mlx");
 %       Calculul Infasurarii induse
 % ==========================================
 
-Z2 = 40;
+Z2 = 56;
 m2 = Z2;
 
 alpha = (2 * pi * p) / Z2
@@ -12,7 +12,7 @@ alpha = (2 * pi * p) / Z2
 Dr = D - 2 * delta;
 t2 = (pi * (D - 2 * delta)) / Z2
 
-ki = sin(pi * p/Z1) / (pi * p/Z1)
+ki = sin(pi/Z1) / (pi/Z1)
 
 % Dimensionarea crestaturii rotorului
 config = "DREPTE";
@@ -30,7 +30,7 @@ E2 = kE * U1 * (w2 * kw2) / (w1 * kw1)
 U20 = E2;
 
 % curentul pe faza
-kI = 0.86;
+kI = 0.93;
 I2 = (kI * IN) / (m1 * w1 * kw1 * m2 * w2 * kw2)
 
 if config == "DREPTE"
@@ -41,19 +41,21 @@ end
 % curentul in inelul de scurt circuit:
 Ii = Ib / (2 * sin(pi * p / Z2))
 
+J2b = 3.6; % [A/mm^2]
+J2i = 0.72 * J2b;
 % sectiunea barei: [ mm^2 ]
-% sb = Ib / J2b
-% % sectiunea ineluljui de scurt-circuitare:
-% si = Ii / J2i
+sb = Ib / J2b
+% sectiunea ineluljui de scurt-circuitare: [mm^2]
+si = Ii / J2i
 
 % latimea constanta a dintelui rotoric:
 kFe = 0.95;
 % Bd2 = 1.5 ... 1.8 [T]
-Bd2 = 1.6
+Bd2 = 1.65
 bd2 = (t2 * Bdelta) / (kFe * Bd2)
 
-bstm2 = 1.2; % bistm2 = 1 ... 1.5 mm
-histm2 = 1; % histm2 = 0.8 ... 1.5 mm
+bistm2 = 1.8; % bistm2 = 1 ... 1.5 mm
+histm2 = 1.2; % histm2 = 0.8 ... 1.5 mm
 
 % latimea crestaurii barei rotorice: [mm]
 bcr2v = (pi / Z2) * (Dr - 2 * histm2) - bd2
