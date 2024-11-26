@@ -1,4 +1,4 @@
-run("T2_CalcululInfasurarilorCrestaturilorStatorului.mlx");
+run("T2_Stator.mlx");
 % ==========================================
 %       Calculul Infasurarii induse
 % ==========================================
@@ -70,3 +70,9 @@ bd2v = (pi / Z2) * (Dr - 2 * histm2) - bcr2v
 bd2b =  (pi / Z2) * (Dr - 2 * hd2) - bcr2b
 % aria sectiunii nete a crestaturii rotorice:
 sb = ((bcr2v + bcr2b) / 2) * (hcr2 - histm2)
+
+
+lFe = lg;
+Bj2 = 1.3;
+hj2 = Flux / (2 * kFe * lFe * Bj2 * 10^-6)
+Dir = Dr - 2 * (hd2 + hj2) % [mm]
