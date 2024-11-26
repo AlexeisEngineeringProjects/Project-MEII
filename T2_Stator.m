@@ -1,4 +1,4 @@
-run("T1_Dimen.mlx")
+run("T1_Dimensiuni.mlx")
 
 % ====================================================
 % Calculul infasurarilor si crestaturilor statorului
