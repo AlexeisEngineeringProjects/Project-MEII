@@ -1,4 +1,4 @@
-run("T1_Dimensiuni.mlx")
+run("T1_Dimensiuni.mlx");
 
 % ====================================================
 % Calculul infasurarilor si crestaturilor statorului
@@ -27,6 +27,7 @@ kw1 = 0.922;  % Assuming kw1 from Annex 1
 
 % Numarul de spire pe faza
 w1 = kE * U1 / (4 * kB * f1 * kw1 * Flux)
+%w1 = 31.85 % rezultat Sabina
 
 % a1: 2 * p / a1 ... integer, p = 1 => a1 = {1, 2}
 a1 = 2;
@@ -39,9 +40,7 @@ end
 
 w1 = Z1*nc1/(6*a1)
 
-% Calculating A
-IN = 216.9660;  % Placeholder value for nominal current; replace as needed
-
+IN = 216.9660;  % [A]
 % [ A/cm ]
 A = (Z1 * nc1 * IN) / (pi * D * 10^-1 * a1)
 
@@ -73,9 +72,7 @@ bd1 = 10 * t1 * Bdelta / (kFe * Bd1) %  [mm]
 ku = 0.75;
 Scr = ntot * dci^2 / ku % [mm^2]
 
-
-bistm1 = 3.25 % [mm]
-
+bistm1 = 3.25; % [mm]
 histm1 = 1.8; % [mm]
 hpana = 3; % [mm]
 giz = 0.4; % [mm]
@@ -86,7 +83,6 @@ bcr1v = (D + 2 * histm1 + 2 * hpana + 4 * giz) * pi / Z1 - bd1
 hutilcr1 = (sqrt((bcr1v - 2 * giz)^2 + 4 * Scr * tan(pi / Z1)) - bcr1v + 2 * giz) / (2 * tan(pi / Z1))
 
 hd1 = hutilcr1 + histm1 + hpana + 4 * giz
-% hd1 = 51.13
 
 bcr1b = (D + 2 * hd1) * pi / Z1 - bd1
 
@@ -95,7 +91,7 @@ bd1b = (D + 2 * hd1)* pi / Z1 - bcr1b
 
 hj1 = (De - D) / 2 - hd1
 
-% Bj1 = 1.3 ... 1.6
+% Bj1 = 1.3 ... 1.6 [T]
 Bj1 = Flux / (2 * kFe * lg * hj1 * 10^-6)
 
 % [mm^2]
