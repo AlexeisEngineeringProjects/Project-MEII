@@ -31,8 +31,8 @@ U20 = E2;
 
 % curentul pe faza
 kI = 0.93;
-I2 = (kI * IN) / (m1 * w1 * kw1 * m2 * w2 * kw2)
-
+I2 = (m1 * w1 * kw1 * kI * IN) / (m2 * w2 * kw2)
+I2N = I2;
 if config == "DREPTE"
     Ib = kI * IN * (2 * m1 * w1 * kw1) / Z2
 else
@@ -57,11 +57,11 @@ bd2 = (t2 * Bdelta) / (kFe * Bd2)
 bistm2 = 1.8; % bistm2 = 1 ... 1.5 mm
 histm2 = 1.2; % histm2 = 0.8 ... 1.5 mm
 
-% latimea crestaurii barei rotorice: [mm]
+% latimea crestaturii barei rotorice: [mm]
 bcr2v = (pi / Z2) * (Dr - 2 * histm2) - bd2
 % inaltimea crestaturii rotorice: [mm]
 hcr2 = (Z2 / (2 * pi)) * (bcr2v - sqrt(bcr2v^2 - (4 * pi / Z2) * sb)) + histm2
-hd2 = hcr2;
+hd2 = hcr2; % [mm]
 % latimea crestaturii rotorice:
 bcr2b = bcr2v - (2 * pi / Z2) * (hcr2 - histm2)
 % latimea dintelui rotoric la varfului crestaturii trapezoidale:
