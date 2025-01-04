@@ -26,11 +26,11 @@ cosFiN = 0.922; % Factorul de putere cos(fi) nominal
 
 % Calculați U1, Sn și I1n
 U1 = Un / sqrt(3) % Tensiunea de fază
-Sn = Pn / (etaN * cosFiN); % Puterea aparentă nominală [VA]
+Sn = Pn / (etaN * cosFiN) % Puterea aparentă nominală [VA]
 I1n = Sn / (3 * U1) % Curentul de fază nominal [A]
 IN = I1n;
 % Tensiunea electromotoare pe fază și puterea aparentă internă
-kE = 0.98 - p * 5e-3; % coeficient de aproximare
+kE = 0.98 - p * 5e-3 % coeficient de aproximare
 E1 = kE * U1 % t.e.m.
 Sin = 3 * E1 * I1n % Puterea aparentă internă [VA]
 % Alegerea coeficienților care intervin în expresia puterii aparente interne
@@ -69,6 +69,7 @@ tau = pi * D / (2 * p) % Lungimea pasului polar [mm]
 A = 472; % Patura de curent [A/cm]
 Bdelta = 0.675; % Inducția magnetică la intrefier [T]
 lg = (2 * p * Sin * 1e7) / (1000 * kB * kw * alfai * D^2 * A * Bdelta) % Lungimea geometrica [mm]
+lg = 171;
 
 delta = 0.03 * (4 + 0.7 * sqrt(D * lg * 10^-2)) % Lungimea intrefierului [mm]
-% recomandat 0.70 mm
+delta = 0.6; % recomandat 0.60 mm
