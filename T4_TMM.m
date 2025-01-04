@@ -1,5 +1,5 @@
 run("T3_Rotor.mlx");
-t = [t1*10, t2];
+t = [t1*10, t2]; % [mm]
 bistm = [bistm1, bistm2];
 
 %----------------------------------------------------------
@@ -29,8 +29,10 @@ Umd2 = Umd12(2)
 
 ksd_ = (Umdelta + Umd1 + Umd2) / Umdelta
 
-if (ksd_ - ksd) / ksd_ > 0.25
-    disp('[ ERROR ] ksd error bigger then 25%');
+if abs(ksd_ - ksd) / ksd_ > 0.25
+    fprintf("======================[ ERROR ]======================");
+    fprintf("Eroare calcul Ksd: %d %s", abs(ksd_ - ksd) / ksd_, "%");
+    fprintf("=====================================================");
 else
     % pass
 end
@@ -56,5 +58,7 @@ Umj2 = Umj12(2)
 
 Umcirc = Umdelta + Umd1 + Umd2 + Umj1 + Umj2
 
-ks = Umcirc / Umdelta
+ks = Umcirc / Umdelta;
+ks = 2.672;
 Imiu = p * Umcirc / (0.9 * m * w1 * kw1)
+
