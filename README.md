@@ -6,7 +6,7 @@ which involves the electromagnetic calculation of an asynchronous electric machi
 
 The calculations are performed in MATLAB, and in the future, I plan to introduce the digital implementation of the necessary graphs for acquiring the initial data.
 
-###Folder Structure:
+Folder Structure:
 ```structured text
 /my-repo
   │
