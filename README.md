@@ -7,15 +7,31 @@ which involves the electromagnetic calculation of an asynchronous electric machi
 The calculations are performed in MATLAB, and in the future, I plan to introduce the digital implementation of the necessary graphs for acquiring the initial data.
 
 ###Folder Structure:
-'''structured text
+```structured text
 /my-repo
-│
-├── /data
-│   ├── dataset.csv
-│
-├── /scripts
-│   ├── analyze.py
-│
-├── README.md
+  │
+  ├─── /lib
+  │       ├── Init.m
+  │       ├── <functions implementation>.m
+  │       ├── <headers>.m
+  │
+  ├─── /src
+  │       ├── main.m
+  │       ├── T1_Dimensions.m
+  │       ├── ...
+  │       ├── <Last Script>.csv
+  │
+  ├─── /data
+  │       ├── analyze.py
+  │
+  ├─── /tools
+  │       ├── graphictool
+  │                 ├── graphictool.py         (some additional tools for data pre-processing)
+  │                 ├── <tools>.py
+  │
+  ├─── /results
+  │       ├── Results.txt
+  │
+  ├── README.md
 
-'''
+```
