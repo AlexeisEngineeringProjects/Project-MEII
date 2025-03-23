@@ -115,18 +115,16 @@ clear("KB_funct", "fig2_4", "fig2_4_range");
 % ============================================================
 switch p
     case 1
-        lambda_range = "0.35 ... 1.25";
+        lambda_comm(2) = lambda_comm(2) + "0.35 ... 1.25";
     case 2
-        lambda_range = "0.5 ... 1.75";
+        lambda_comm(2) = lambda_comm(2) + "0.5 ... 1.75";
     case 3
-        lambda_range = "0.65 ... 1.90";
+        lambda_comm(2) = lambda_comm(2) + "0.65 ... 1.90";
     case 4
-        lambda_range = "0.75 ... 2.2";
+        lambda_comm(2) = lambda_comm(2) + "0.75 ... 2.2";
     otherwise
         disp("[ ERROR ] p out of range! Check initial values.\n")
 end
-
-lambda_comm(2) = lambda_comm(2) + lambda_range; 
 
 %                   Date tabelare (Tabelul 2.2)
 % ┌─────────┬────────────┬────────────┬────────────┬────────────┐
@@ -135,7 +133,7 @@ lambda_comm(2) = lambda_comm(2) + lambda_range;
 % │  lambda │  0.35-1.25 │  0.5-1.75  │  0.65-1.9  │  0.75-2.2  │
 % └─────────┴────────────┴────────────┴────────────┴────────────┘
 lambda = UserGet(lambda_comm, lambda_space, lambda_default, opts);
-clear("lambda_comm", "lambda_space", "lambda_range", "lambda_default");
+clear("lambda_comm", "lambda_space", "lambda_default");
 %----------------------------------------------------------------------
 fig2_5 = readtable(Table, ...
     Sheet = "T1", Range = fig2_5_range);
@@ -170,20 +168,19 @@ D = 10 * fix(23.32 * (p^2 * Sin / (1000 * lambda * C))^(1/3)) + 1; % Diametrul i
 % └─────────┴────────────┴────────────┴────────────┴────────────┘
 switch p
     case 1
-        kD_range = "1.65 ... 1.69";
+        kD_comm(2) = kD_comm(2) + "1.65 ... 1.69";
     case 2
-        kD_range = "1.46 ... 1.49";
+        kD_comm(2) = kD_comm(2) + "1.46 ... 1.49";
     case 3
-        kD_range = "1.37 ... 1.40";
+        kD_comm(2) = kD_comm(2) + "1.37 ... 1.40";
     case 4
-        kD_range = "1.27 ... 1.30";
+        kD_comm(2) = kD_comm(2) + "1.27 ... 1.30";
     otherwise
         disp("[ ERROR ] p out of range! Check initial values.\n")
 end
 
-kD_comm(2) = kD_comm(2) + kD_range; 
 kD = UserGet(kD_comm, kD_space, kD_default, opts); % kD = 1.66;
-clear("kD_comm", "kD_range", "kD_default");
+clear("kD_comm", "kD_default");
 
 %----------------------------------------------------------------------
 De = kD * D; % Diametrul exterior al statorului [mm]
