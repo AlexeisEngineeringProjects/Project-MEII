@@ -8,7 +8,7 @@ The calculations are performed in MATLAB, and in the future, I plan to introduce
 
 Folder Structure:
 ```structured text
-/my-repo
+/ME2_Solver Folder 
   │
   ├─── /lib
   │       ├── Init.m
