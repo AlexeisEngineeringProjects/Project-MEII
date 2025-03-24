@@ -1,7 +1,6 @@
 % ============================================================
 %              Calculul Puterii Aparente interne
 % ============================================================
-
 %            Date tabelare (Tabelul 2.1)
 % ┌─────────┬─────────┬─────────┬─────────┬─────────┐
 % │    p    │    4    │    3    │    2    │    1    │
@@ -34,6 +33,8 @@ if isnan(p)
     disp("[ ERROR ] p was not defined in previous loop.");
 end
 clear("pTabel", "n1Tabel", "i");
+%----------------------------------------------------------------------
+[kw, ksd, lambda, kD] = T1Parameters_UserFnc(p);
 %----------------------------------------------------------------------
 fig2_1 = readtable(Table, ...
     Sheet = "T1", Range = fig2_1_range);
@@ -87,11 +88,6 @@ kE = 0.98 - p * 5e-3; % [-]
 E1 = kE * U1; % EMF [V]
 Sin = 3 * E1 * I1n; % [VA]
 %----------------------------------------------------------------------
-kw = UserGet(Kw_comm, Kw_space, Kw_default, opts);  % Factor de înfășurare
-ksd = UserGet(Ksd_comm, Ksd_space, Ksd_default, opts); % saturation coeff
-
-clear("Kw_comm", "Ksd_comm", "Kw_space", "Ksd_space", "Kw_default", "Ksd_default");
-%----------------------------------------------------------------------
 fig2_4 = readtable(Table, ...
     Sheet = "T1", Range = fig2_4_range);
 
@@ -112,28 +108,7 @@ clear("KB_funct", "fig2_4", "fig2_4_range");
 % ============================================================
 %               Calculul dimensiunilor principale
 % ============================================================
-switch p
-    case 1
-        lambda_comm(2) = lambda_comm(2) + "0.35 ... 1.25";
-    case 2
-        lambda_comm(2) = lambda_comm(2) + "0.5 ... 1.75";
-    case 3
-        lambda_comm(2) = lambda_comm(2) + "0.65 ... 1.90";
-    case 4
-        lambda_comm(2) = lambda_comm(2) + "0.75 ... 2.2";
-    otherwise
-        disp("[ ERROR ] p out of range! Check initial values.")
-end
 
-%                   Date tabelare (Tabelul 2.2)
-% ┌─────────┬────────────┬────────────┬────────────┬────────────┐
-% │    p    │     1      │     2      │     3      │     4      │
-% ├─────────┼────────────┼────────────┼────────────┼────────────┤
-% │  lambda │  0.35-1.25 │  0.5-1.75  │  0.65-1.9  │  0.75-2.2  │
-% └─────────┴────────────┴────────────┴────────────┴────────────┘
-lambda = UserGet(lambda_comm, lambda_space, lambda_default, opts);
-clear("lambda_comm", "lambda_space", "lambda_default");
-%----------------------------------------------------------------------
 fig2_5 = readtable(Table, ...
     Sheet = "T1", Range = fig2_5_range);
 
@@ -158,28 +133,6 @@ C = C_funct(Sin * 0.001); % in table SiN in in [kVA]
 clear("C_funct", "fig2_5", "fig2_5_range");
 %----------------------------------------------------------------------
 D = 10 * fix(23.32 * (p^2 * Sin / (1000 * lambda * C))^(1/3)) + 1; % Diametrul interior al statorului [mm]
-%----------------------------------------------------------------------
-%                  Date tabelare (Tabelul 2.3)
-% ┌─────────┬────────────┬────────────┬────────────┬────────────┐
-% │    p    │     1      │     2      │     3      │     4      │
-% ├─────────┼────────────┼────────────┼────────────┼────────────┤
-% │   kD    │  1.65-1.69 │  1.46-1.49 │  1.37-1.4  │  1.27-1.3  │
-% └─────────┴────────────┴────────────┴────────────┴────────────┘
-switch p
-    case 1
-        kD_comm(2) = kD_comm(2) + "1.65 ... 1.69";
-    case 2
-        kD_comm(2) = kD_comm(2) + "1.46 ... 1.49";
-    case 3
-        kD_comm(2) = kD_comm(2) + "1.37 ... 1.40";
-    case 4
-        kD_comm(2) = kD_comm(2) + "1.27 ... 1.30";
-    otherwise
-        disp("[ ERROR ] p out of range! Check initial values.")
-end
-
-kD = UserGet(kD_comm, kD_space, kD_default, opts); % kD = 1.66;
-clear("kD_comm", "kD_default", "kD_space");
 
 %----------------------------------------------------------------------
 De = kD * D; % Diametrul exterior al statorului [mm]
