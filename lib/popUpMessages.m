@@ -23,3 +23,8 @@ lambda_space = [1, 60];
 kD_comm = ["Insert KD value", "give value for: K_{D} = "];
 kD_default = '1.66';
 kD_space = [1, 60];
+%========================================================================
+% q message
+q1_comm = ["Insert q value", "give value for q : "];
+q1_default = '8';
+q1_space = [1, 60];
