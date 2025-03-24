@@ -1,8 +1,7 @@
 % ============================================================
 %              Calculul Puterii Aparente interne
 % ============================================================
-run("lib\Init.m");
-%-------------------------------------------------------------
+
 %            Date tabelare (Tabelul 2.1)
 % ┌─────────┬─────────┬─────────┬─────────┬─────────┐
 % │    p    │    4    │    3    │    2    │    1    │
@@ -16,7 +15,7 @@ p = NaN;
 
 if n >= n1Tabel(end)
     p = p(end);
-    disp("[ ERROR ] n out of range. Check initial values!\n");
+    disp("[ ERROR ] n out of range. Check initial values!");
 end
 
 for i = 1:length(n1Tabel) - 1
@@ -50,7 +49,7 @@ switch p
     case 4
         Y = fig2_1.randp4;
     otherwise
-        disp("[ ERROR ] p out of range! Check initial values.\n")
+        disp("[ ERROR ] p out of range! Check initial values.")
 end
 
 Rand_ = Interpolation_Fnct(X, Y);
@@ -71,7 +70,7 @@ switch p
     case 4
         Y = fig2_2.cosFp4;
     otherwise
-        disp("[ ERROR ] p out of range! Check initial values.\n")
+        disp("[ ERROR ] p out of range! Check initial values.")
 end
 
 PowerFactor = Interpolation_Fnct(X, Y);
@@ -123,7 +122,7 @@ switch p
     case 4
         lambda_comm(2) = lambda_comm(2) + "0.75 ... 2.2";
     otherwise
-        disp("[ ERROR ] p out of range! Check initial values.\n")
+        disp("[ ERROR ] p out of range! Check initial values.")
 end
 
 %                   Date tabelare (Tabelul 2.2)
@@ -150,7 +149,7 @@ switch p
     case 4
         Y = fig2_5.Cp4;
     otherwise
-        disp("[ ERROR ] p out of range! Check initial values.\n")
+        disp("[ ERROR ] p out of range! Check initial values.")
 end
 
 C_funct = Interpolation_Fnct(X, Y);
@@ -176,11 +175,11 @@ switch p
     case 4
         kD_comm(2) = kD_comm(2) + "1.27 ... 1.30";
     otherwise
-        disp("[ ERROR ] p out of range! Check initial values.\n")
+        disp("[ ERROR ] p out of range! Check initial values.")
 end
 
 kD = UserGet(kD_comm, kD_space, kD_default, opts); % kD = 1.66;
-clear("kD_comm", "kD_default");
+clear("kD_comm", "kD_default", "kD_space");
 
 %----------------------------------------------------------------------
 De = kD * D; % Diametrul exterior al statorului [mm]
@@ -200,7 +199,7 @@ switch p
     case 4
         Y = fig2_7.Ap4;
     otherwise
-        disp("[ ERROR ] p out of range! Check initial values.\n")
+        disp("[ ERROR ] p out of range! Check initial values.")
 end
 
 A_funct = Interpolation_Fnct(X, Y);
@@ -221,7 +220,7 @@ switch p
     case 4
         Y = fig2_8.Bdelta_p4;
     otherwise
-        disp("[ ERROR ] p out of range! Check initial values.\n")
+        disp("[ ERROR ] p out of range! Check initial values.")
 end
 
 B_funct = Interpolation_Fnct(X, Y);
