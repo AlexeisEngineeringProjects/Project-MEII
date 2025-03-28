@@ -99,5 +99,6 @@ fprintf(fileID, '\n-------------------------------------------------------------
 %==========================================================================
 disp('Closing file...');
 status = fclose(fileID);
-disp(['fclose returned: ', num2str(status)]);fprintf('\n Output file writed succesfully!\n');
+disp(['fclose returned: ', num2str(status)]);
+fprintf('\n Output file writed succesfully!\n');
 %==========================================================================
