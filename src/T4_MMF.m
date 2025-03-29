@@ -44,9 +44,16 @@ fprintf("\n=====================================================\n\n");
 Bj12 = [Bj1, Bj2];
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-zetta12 = [0.225, 0.45]; % interpolation function needed
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+fig4_ = readtable(Table, ...
+    Sheet = "T4", Range = fig4_range);
+X = fig4_.Bj;
+Y = fig4_.zetta;
+
+zetta_Fnc = Interpolation_Fnct(X, Y);
+
+zetta12 = [zetta_Fnc(Bj1), zetta_Fnc(Bj2)];
+
+clear("zetta_fnc", "fig4_");
 
 
 Hj12 = [50, 5];
