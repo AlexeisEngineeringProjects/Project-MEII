@@ -22,7 +22,7 @@ Folder Structure:
   │       ├── <Last Script>.csv
   │
   ├─── /data
-  │       ├── analyze.py
+  │       ├── analyze.xlsx
   │
   ├─── /tools
   │       ├── graphictool
