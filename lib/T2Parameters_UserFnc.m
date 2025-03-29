@@ -1,4 +1,4 @@
-function [q1, a1, J1, iz, kw1, Bd1, ku, bistm1, histm1, hpana, giz] = T2Parameters_UserFnc(p)
+function [q1, a1, J1, iz, kw1, Bd1, ku, bistm1, histm1, hpana, giz, nf] = T2Parameters_UserFnc(p)
     % Prompts for each parameter
     promt = ["insert  q_{1}  from "...
              "insert  a_{1}  as divisor of "...
@@ -11,10 +11,11 @@ function [q1, a1, J1, iz, kw1, Bd1, ku, bistm1, histm1, hpana, giz] = T2Paramete
              "insert  h_{istm1}  from 1 ... 2 [mm]"...
              "insert  h_{pana}  from 2 ... 4 [mm]"...
               "insert  g_{iz} , g_{iz} < 0.44 [mm]"...
+              "insert value for n_{f} from 1 ... 20 (integer)"
              ];
 
     % Default values for the input dialog
-    default_values = {'8', '2', '5.8', '0.04', '0.922', '1.7', '0.75', '3.25', '1.8', '3', '0.4'};
+    default_values = {'8', '2', '5.8', '0.04', '0.922', '1.7', '0.75', '3.25', '1.8', '3', '0.4', '10'};
 
     % Numarul de crestaturi ale statorului
     % ┌─────────┬─────────┬─────────┬─────────┬─────────┐
@@ -65,5 +66,7 @@ function [q1, a1, J1, iz, kw1, Bd1, ku, bistm1, histm1, hpana, giz] = T2Paramete
     histm1 = str2double(answer{9});
     hpana = str2double(answer{10});
     giz = str2double(answer{11});
+
+    nf = str2double(answer{12});
 
 end
