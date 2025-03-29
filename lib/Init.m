@@ -1,6 +1,6 @@
 % =======================================================================
 if ~exist('start_method', 'var')
-    DefaultPath = 'C:\Users\SZ\Desktop\Facultate FIE\facultate an III\an III sem. 1\ME2_Solver';
+    DefaultPath = '/MATLAB Drive/Project-MEII';
 
     HomeDirectory = inputdlg("Give the actual Project Directory", ...
         "Give the actual Project Directory", [1, 75], {DefaultPath});
