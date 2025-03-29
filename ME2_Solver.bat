@@ -19,7 +19,7 @@ echo.
 echo.
 echo    ===============================================================
 echo                           ME 2  Solver Utility
-echo            codet by Crivcianschi Alexei, TUCN, march 2025
+echo            coded by Crivcianschi Alexei, TUCN, march 2025
 echo.
 echo    ---------------------------------------------------------------
 echo.
