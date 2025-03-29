@@ -21,7 +21,7 @@ run("T2_Stator.m");
 %------------------------------------------------------------------------------
 fprintf("\nstart running T3 Script\np = %d\n\nZ1 = %d\n\n", p, Z1);
 
-fprintf("\nAlegeti Z2 conform tabelului:\n");
+fprintf("\nInsert Z2 from table:\n");
 disp([' ┌────────────┬───────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┐'; ...
       ' │ Nr. perechi│  crestaturi   │           Nr. crestaturi DREPTE            │           Nr. crestaturi ÎNCLINATE         │'; ...
       ' │   poli p   │   stator Z1   │             ale rotorului Z2               │               ale rotorului Z2             │'; ...
@@ -50,7 +50,7 @@ run("T3_Rotor.m");
 run("T4_MMF.m");
 %------------------------------------------------------------------------------
 fprintf("\tp = %d\n", p);
-fprintf("\nAlegeti parametrul A conform tabelului : \n")
+fprintf("\nInsert A from table : \n")
 disp([
 '  ┌────────────┬────────┬────────┬────────┬────────┐'; ...
 '  │     p      │   1    │   2    │   3    │   4    │'; ...
