@@ -11,7 +11,7 @@ hcr2 = hd2;  % [mm]
 tmed = pi * (D + hcr1) / Z1; % [mm]
 Rm = y1 * tmed / 2; % [mm]
 %----------------------------------------
-[A, useer_x, kj] = T5Parameters_UserFnc();
+[A, useer_x, kj] = T5Parameters_UserFnc(p);
 
 % A = 4;
 lf1 = (pi*Rm/10) - (2*A); % [cm]
