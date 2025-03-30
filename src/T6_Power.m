@@ -88,7 +88,7 @@ randamentul_nominal = Pn / (Pn + Pierderi);
 
 randamentul_estimat = etaN;
 
-if abs(randamentul_estimat - randamentul_nominal)/randamentul_estimat > 0.05
+if abs(randamentul_estimat - randamentul_nominal)/randamentul_estimat > 0.05 || isnan(abs(randamentul_estimat - randamentul_nominal)/randamentul_estimat)
     rez = "FAIL";
     sign = ">";
 else
