@@ -19,7 +19,7 @@ cos_fiN_ = (I0a + I2a_) / I1N;
 Mn = (m1 * p * U1^2 * R2_ / sN) / (2*pi*f1*((R1 + c1 * R2_/sN)^2 + (X_sigma1 + c1 * X_sigma2)^2));
 Mn_ = 30 * Pn / (pi * (1 - sN) * n);
 
-if abs(Mn - Mn_)/Mn > 0.05
+if abs(Mn - Mn_)/Mn > 0.05 || isnan(abs(randamentul_estimat - randamentul_nominal)/randamentul_estimat)
     rez = "FAIL";
     sign = ">";
 else
